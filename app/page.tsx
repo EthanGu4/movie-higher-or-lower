@@ -85,7 +85,7 @@ export default function Home() {
         </div>
 
         <p className="text-center text-xs opacity-40 mt-12">
-          Higher rating wins · Copyright © Ethan Gu
+          Higher rating wins · Copyright © 2025 Ethan Gu
         </p>
       </div>
     </div>

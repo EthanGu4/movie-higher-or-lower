@@ -58,6 +58,7 @@ export default function GamePage() {
         const res = await fetch("/api/game/next");
         return res.json();
     }
+
     async function handleGuess(choice: "left" | "right") {
         if (!left || !right) return;
 
@@ -81,6 +82,7 @@ export default function GamePage() {
             setTimeout(() => {
                 router.replace("/");
             }, 1500); 
+
             return;
         }
 
@@ -106,17 +108,19 @@ export default function GamePage() {
             setRight(await loadNextMovie());
             setLeftLife(1);
             setRightLife(1);
+
         } else if (leftLife === 2) {
             setLeft(nextMovie);
             setLeftLife(1);
-            setRightLife((r) => r + 1);
+            setRightLife((right) => right + 1);
+
         } else if (rightLife === 2) {
             setRight(nextMovie);
             setRightLife(1);
-            setLeftLife((l) => l + 1);
+            setLeftLife((left) => left + 1);
         }
 
-        setRound((r) => r + 1);
+        setRound((round) => round + 1);
     }
 
     if (!left || !right) {
